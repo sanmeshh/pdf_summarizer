@@ -53,12 +53,12 @@ def displaypdf(file):
     #diplaying pdf
     st.markdown(pdf_display,unsafe_allow_html=True)
 
-st.set_page_config(layout='wide',page_title='Research Paper Summarizer')
+st.set_page_config(layout='wide',page_title='PDF Summarizer')
 
 def main():
-    st.title('RP summarization using T5🤖')
+    st.title('text summarization using T5🤖')
 
-    uploaded_file=st.file_uploader("Upload the research paper in pdf format",type=['pdf'])
+    uploaded_file=st.file_uploader("Upload the file in pdf format",type=['pdf'])
 
     if uploaded_file is not None:
         if st.button("Summarize"):
