@@ -62,14 +62,12 @@ def main():
 
     if uploaded_file is not None:
         if st.button("Summarize"):
-            col1,col2=st.columns(2)
+            col1=st.columns(1)
             filepath=uploaded_file.name
             with open(filepath,'wb') as temp_file:
                 temp_file.write(uploaded_file.read())
+
             with col1:
-                st.info("uploaded file: ")
-                pdf_viewer=displaypdf(filepath)
-            with col2:
                 st.info("Summarization: ")
                 summary=llm_pipline(filepath)
                 st.success(summary)
